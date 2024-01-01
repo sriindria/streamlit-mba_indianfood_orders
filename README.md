@@ -5,6 +5,7 @@
 
 ## Market Basket Analysis Indian Takeaway Food Orders - Apriori Algorithm
 ![Gambar](img/gambar.jpg)
+<br>
 Pesanan makanan India saat ini menjadi salah satu industri yang berkembang pesat di Indonesia. Hal ini disebabkan oleh meningkatnya minat masyarakat Indonesia terhadap makanan India yang lezat dan beragam.
 Salah satu cara untuk meningkatkan efisiensi dan efektivitas industri ini adalah dengan melakukan analisis keranjang belanja. Analisis keranjang belanja adalah proses untuk mempelajari pola pembelian pelanggan untuk mengidentifikasi peluang peningkatan penjualan.
 
@@ -247,4 +248,4 @@ Pemilihan visualisasi yang tepat tergantung pada tujuan analisis. Jika tujuannya
 
 <br>
 
-[Streamlit Link](link)
+[Streamlit Link](https://app-mbaindianfoodorders-8y8dkb7qytgkt5eilykxft.streamlit.app/)
