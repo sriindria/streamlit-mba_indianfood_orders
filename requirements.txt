@@ -1,0 +1,10 @@
+numpy
+pandas
+sklearn
+scikit-learn
+streamlit
+streamlit-option-menu
+pip
+matplotlib
+mlxtend
+plotly
