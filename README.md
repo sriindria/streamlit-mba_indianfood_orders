@@ -251,4 +251,4 @@ Pemilihan visualisasi yang tepat tergantung pada tujuan analisis. Jika tujuannya
 Streamlit App - Market Basket Analysis Indian Food Orders - Apriori Algorithm
 [Streamlit Link](https://app-mbaindianfoodorders-8y8dkb7qytgkt5eilykxft.streamlit.app/)
 <br>
-![Gambar](img/deployment.png)
+![Deployment](img/deployment.png)
