@@ -2,9 +2,8 @@ numpy
 pandas
 sklearn
 scikit-learn
-streamlit
-streamlit-option-menu
 pip
+streamlit
 matplotlib
 mlxtend
 plotly
