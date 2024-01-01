@@ -247,5 +247,8 @@ Berikut adalah beberapa interpretasi yang dapat dilakukan dari ketiga visualisas
 Pemilihan visualisasi yang tepat tergantung pada tujuan analisis. Jika tujuannya adalah untuk mengidentifikasi aturan apriori yang paling penting, maka visualisasi 3D Scatter of Rules atau visualisasi Support vs. Confidence dapat digunakan. Jika tujuannya adalah untuk melihat pola-pola yang muncul dalam data, maka visualisasi Sunburst Chart dapat digunakan.
 
 <br>
-
+##### Deployments
+Streamlit App - Market Basket Analysis Indian Food Orders - Apriori Algorithm
 [Streamlit Link](https://app-mbaindianfoodorders-8y8dkb7qytgkt5eilykxft.streamlit.app/)
+<br>
+![Gambar](img/deployment.png)
