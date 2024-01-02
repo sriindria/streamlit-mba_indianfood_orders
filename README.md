@@ -7,8 +7,10 @@
 # Market Basket Analysis Indian Takeaway Food Orders - Apriori Algorithm
 ![Gambar](img/gambar.jpg)
 <br>
-Pesanan makanan India saat ini menjadi salah satu industri yang berkembang pesat di Indonesia. Hal ini disebabkan oleh meningkatnya minat masyarakat Indonesia terhadap makanan India yang lezat dan beragam.
-Salah satu cara untuk meningkatkan efisiensi dan efektivitas industri ini adalah dengan melakukan analisis keranjang belanja. Analisis keranjang belanja adalah proses untuk mempelajari pola pembelian pelanggan untuk mengidentifikasi peluang peningkatan penjualan.
+Pasar makanan India adalah pasar yang besar dan berkembang pesat. Pada tahun 2023, pasar makanan India diperkirakan bernilai $172,3 miliar dan diperkirakan akan tumbuh dengan CAGR sebesar 7,5% dari tahun 2023 hingga 2028.
+Salah satu tantangan yang dihadapi oleh pelaku pasar makanan India adalah memahami pola pembelian pelanggan. Dengan memahami pola pembelian pelanggan, pelaku pasar dapat membuat keputusan bisnis yang lebih baik, seperti pengembangan produk dan promosi.
+Salah satu cara untuk memahami pola pembelian pelanggan adalah dengan melakukan analisis market basket. Analisis market basket adalah teknik data mining yang digunakan untuk mengidentifikasi hubungan antara produk yang dibeli oleh pelanggan.
+Dalam kasus pasar makanan India, analisis market basket dapat digunakan untuk mengidentifikasi produk-produk yang sering dibeli bersama. Informasi ini dapat digunakan untuk mengembangkan rekomendasi produk, cross-selling, dan up-selling.
 
 **Masalah ini perlu diselesaikan karena :**<br>
 Untuk mengidentifikasi item-item yang sering dibeli bersama, item-item yang memiliki potensi untuk meningkatkan penjualan, dan pola pembelian pelanggan. Masalah ini perlu diselesaikan karena informasi ini dapat digunakan untuk meningkatkan efisiensi dan efektivitas industri pesanan makanan India di Indonesia, serta untuk meningkatkan kepuasan pelanggan.
