@@ -16,9 +16,8 @@ Dalam kasus pasar makanan India, analisis market basket dapat digunakan untuk me
 Untuk mengidentifikasi item-item yang sering dibeli bersama, item-item yang memiliki potensi untuk meningkatkan penjualan, dan pola pembelian pelanggan. Masalah ini perlu diselesaikan karena informasi ini dapat digunakan untuk meningkatkan efisiensi dan efektivitas industri pesanan makanan India di Indonesia, serta untuk meningkatkan kepuasan pelanggan.
 
 **Cara penyelesaian masalah :**<br>
-Masalah ini akan diselesaikan dengan menggunakan analisis keranjang belanja dengan algoritma Apriori. Algoritma Apriori adalah algoritma yang digunakan untuk menemukan aturan asosiasi dalam data transaksional. Aturan asosiasi adalah aturan yang menyatakan bahwa suatu item akan sering dibeli bersama dengan item lain.
+Masalah ini akan diselesaikan dengan menggunakan analisis keranjang belanja dengan algoritma Apriori. Algoritma Apriori adalah algoritma yang digunakan untuk menemukan aturan asosiasi dalam data transaksional. Aturan asosiasi adalah aturan yang menyatakan bahwa suatu item akan sering dibeli bersama dengan item lain.<br>
 <br>
-
 
 ## Business Understanding
 Tujuan bisnis dari proyek ini adalah untuk meningkatkan penjualan dan kepuasan pelanggan di industri pesanan makanan India.
