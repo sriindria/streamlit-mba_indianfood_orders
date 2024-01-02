@@ -7,6 +7,7 @@
 # Market Basket Analysis Indian Takeaway Food Orders <br> - Apriori Algorithm
 ![Gambar](img/indianfood.jpg)
 <br>
+**Latar Belakang***
 Pasar makanan India adalah pasar yang besar dan berkembang pesat. Pada tahun 2023, pasar makanan India diperkirakan bernilai $172,3 miliar dan diperkirakan akan tumbuh dengan CAGR sebesar 7,5% dari tahun 2023 hingga 2028.
 Salah satu tantangan yang dihadapi oleh pelaku pasar makanan India adalah memahami pola pembelian pelanggan. Dengan memahami pola pembelian pelanggan, pelaku pasar dapat membuat keputusan bisnis yang lebih baik, seperti pengembangan produk dan promosi.
 Salah satu cara untuk memahami pola pembelian pelanggan adalah dengan melakukan analisis market basket. Analisis market basket adalah teknik data mining yang digunakan untuk mengidentifikasi hubungan antara produk yang dibeli oleh pelanggan.
