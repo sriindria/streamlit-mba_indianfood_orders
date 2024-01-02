@@ -41,7 +41,6 @@ Berdasarkan problem statements, maka goals dari proyek ini adalah sebagai beriku
     - Menganalisis aturan asosiasi untuk mengidentifikasi item-item yang sering dibeli bersama, item-item yang memiliki potensi untuk meningkatkan penjualan, dan pola pembelian pelanggan.
 <br>
 
-
 ## Data Understanding
 Data yang digunakan dalam proyek ini adalah dataset 19560-indian-takeaway-orders.<br>
 Dataset ini terdiri dari 33 ribu pesanan dari dua restoran takeaway India di London, Inggris. Setiap baris adalah satu produk dalam pesanan.
