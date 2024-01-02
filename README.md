@@ -4,7 +4,7 @@
 ### Kelas : Pagi A
 <br>
 
-# Market Basket Analysis Indian Takeaway Food Orders - Apriori Algorithm
+# Market Basket Analysis Indian Takeaway Food Orders <br> - Apriori Algorithm
 ![Gambar](img/gambar.jpg)
 <br>
 Pasar makanan India adalah pasar yang besar dan berkembang pesat. Pada tahun 2023, pasar makanan India diperkirakan bernilai $172,3 miliar dan diperkirakan akan tumbuh dengan CAGR sebesar 7,5% dari tahun 2023 hingga 2028.
@@ -18,6 +18,7 @@ Untuk mengidentifikasi item-item yang sering dibeli bersama, item-item yang memi
 **Cara penyelesaian masalah :**<br>
 Masalah ini akan diselesaikan dengan menggunakan analisis keranjang belanja dengan algoritma Apriori. Algoritma Apriori adalah algoritma yang digunakan untuk menemukan aturan asosiasi dalam data transaksional. Aturan asosiasi adalah aturan yang menyatakan bahwa suatu item akan sering dibeli bersama dengan item lain.
 <br>
+
 
 ## Business Understanding
 Tujuan bisnis dari proyek ini adalah untuk meningkatkan penjualan dan kepuasan pelanggan di industri pesanan makanan India.
@@ -43,7 +44,8 @@ Berdasarkan problem statements, maka goals dari proyek ini adalah sebagai beriku
 ## Data Understanding
 Data yang digunakan dalam proyek ini adalah dataset 19560-indian-takeaway-orders. Dataset ini berisi informasi tentang pesanan makanan India dari berbagai restoran di Indonesia. Data ini terdiri dari 19.560 baris dan 10 kolom, yaitu:
 Dataset ini terdiri dari 33 ribu pesanan dari dua restoran takeaway India di London, Inggris. Setiap baris adalah satu produk dalam pesanan.
-Disini saya menggunakan dataset dari Restaurant 1, dengan 13 ribu pesanan, 75 ribu baris, dan 248 produk.
+Disini saya menggunakan dataset dari Restaurant 1, dengan 13 ribu pesanan, 75 ribu baris, dan 248 produk.<br>
+Dataset: [Takeaway Food Orders](https://www.kaggle.com/datasets/henslersoftware/19560-indian-takeaway-orders) ialah :
 
 ### Variabel-variabel pada dataset
 Variabel-variabel pada dataset [Takeaway Food Orders](https://www.kaggle.com/datasets/henslersoftware/19560-indian-takeaway-orders) ialah :
