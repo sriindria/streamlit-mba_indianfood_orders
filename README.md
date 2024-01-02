@@ -8,8 +8,7 @@
 ![Gambar](img/indianfood.jpg)
 <br>
 **Latar Belakang**<br>
-Pasar makanan India adalah pasar yang besar dan berkembang pesat. Pada tahun 2023, pasar makanan India diperkirakan bernilai $172,3 miliar dan diperkirakan akan tumbuh dengan CAGR sebesar 7,5% dari tahun 2023 hingga 2028.
-Salah satu tantangan yang dihadapi oleh pelaku pasar makanan India adalah memahami pola pembelian pelanggan. Dengan memahami pola pembelian pelanggan, pelaku pasar dapat membuat keputusan bisnis yang lebih baik, seperti pengembangan produk dan promosi.
+Pasar makanan India adalah pasar yang besar dan berkembang pesat. Salah satu tantangan yang dihadapi oleh pelaku pasar makanan India adalah memahami pola pembelian pelanggan. Dengan memahami pola pembelian pelanggan, pelaku pasar dapat membuat keputusan bisnis yang lebih baik, seperti pengembangan produk dan promosi.<br>
 Salah satu cara untuk memahami pola pembelian pelanggan adalah dengan melakukan analisis market basket. Analisis market basket adalah teknik data mining yang digunakan untuk mengidentifikasi hubungan antara produk yang dibeli oleh pelanggan.
 Dalam kasus pasar makanan India, analisis market basket dapat digunakan untuk mengidentifikasi produk-produk yang sering dibeli bersama. Informasi ini dapat digunakan untuk mengembangkan rekomendasi produk, cross-selling, dan up-selling.
 
@@ -42,8 +41,9 @@ Berdasarkan problem statements, maka goals dari proyek ini adalah sebagai beriku
     - Menganalisis aturan asosiasi untuk mengidentifikasi item-item yang sering dibeli bersama, item-item yang memiliki potensi untuk meningkatkan penjualan, dan pola pembelian pelanggan.
 <br>
 
+
 ## Data Understanding
-Data yang digunakan dalam proyek ini adalah dataset 19560-indian-takeaway-orders. Dataset ini berisi informasi tentang pesanan makanan India dari berbagai restoran di Indonesia. Data ini terdiri dari 19.560 baris dan 10 kolom, yaitu:
+Data yang digunakan dalam proyek ini adalah dataset 19560-indian-takeaway-orders.<br>
 Dataset ini terdiri dari 33 ribu pesanan dari dua restoran takeaway India di London, Inggris. Setiap baris adalah satu produk dalam pesanan.
 Disini saya menggunakan dataset dari Restaurant 1, dengan 13 ribu pesanan, 75 ribu baris, dan 248 produk.<br>
 Dataset: [Takeaway Food Orders](https://www.kaggle.com/datasets/henslersoftware/19560-indian-takeaway-orders)
@@ -61,7 +61,6 @@ Variabel-variabel pada dataset [Takeaway Food Orders](https://www.kaggle.com/dat
 <br>
 
 #### Visualisasi Data
-
 Beberapa hasil visualisasi data :
 ![Gambar1](img/gambar1.png)
 <br>
