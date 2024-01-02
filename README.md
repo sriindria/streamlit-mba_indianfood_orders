@@ -60,16 +60,16 @@ Variabel-variabel pada dataset [Takeaway Food Orders](https://www.kaggle.com/dat
 
 ### Visualisasi Data
 Beberapa hasil visualisasi data :
-![Gambar1](img/gambar1.png)
+![Gambar1](img/laris.png)
 <br>
 Plot diatas menampilkan 10 item yang paling laris. Item-item ini sering dibeli bersama, yang menunjukkan bahwa mereka sering dipesan sebagai bagian dari hidangan utama.
 <br>
-![Gambar2](img/gambar2.png)
+![Gambar2](img/tinggi.png)
 <br>
 Plot harga item paling tinggi menunjukkan bahwa item-item dengan harga tertinggi. Item-item ini memiliki harga yang tinggi karena bahan-bahannya yang berkualitas dan proses pembuatannya yang rumit.
 Dari hasil plot tersebut, restoran dapat menawarkan paket atau promosi untuk meningkatkan nilai pesanan.
 <br>
-![Gambar3](img/gambar3.png)
+![Gambar3](img/rendah.png)
 <br>
 Plot harga item paling rendah menunjukkan bahwa item-item dengan harga terendah. Item-item ini memiliki harga yang rendah karena bahan-bahannya yang sederhana dan proses pembuatannya yang relatif mudah.
 Dari hasil plot tersebut, restoran dapat menggunakan informasi ini untuk memasarkan item-item ini sebagai pilihan yang terjangkau.
