@@ -60,7 +60,7 @@ Variabel-variabel pada dataset [Takeaway Food Orders](https://www.kaggle.com/dat
 | 6. | Total products | int64 | Merupakan jumlah total item yang dipesan dalam satu pesanan. |
 <br>
 
-#### Visualisasi Data
+### Visualisasi Data
 Beberapa hasil visualisasi data :
 ![Gambar1](img/gambar1.png)
 <br>
