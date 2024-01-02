@@ -7,7 +7,7 @@
 # Market Basket Analysis Indian Takeaway Food Orders <br> - Apriori Algorithm
 ![Gambar](img/indianfood.jpg)
 <br>
-**Latar Belakang***
+**Latar Belakang**<br>
 Pasar makanan India adalah pasar yang besar dan berkembang pesat. Pada tahun 2023, pasar makanan India diperkirakan bernilai $172,3 miliar dan diperkirakan akan tumbuh dengan CAGR sebesar 7,5% dari tahun 2023 hingga 2028.
 Salah satu tantangan yang dihadapi oleh pelaku pasar makanan India adalah memahami pola pembelian pelanggan. Dengan memahami pola pembelian pelanggan, pelaku pasar dapat membuat keputusan bisnis yang lebih baik, seperti pengembangan produk dan promosi.
 Salah satu cara untuk memahami pola pembelian pelanggan adalah dengan melakukan analisis market basket. Analisis market basket adalah teknik data mining yang digunakan untuk mengidentifikasi hubungan antara produk yang dibeli oleh pelanggan.
@@ -46,7 +46,7 @@ Berdasarkan problem statements, maka goals dari proyek ini adalah sebagai beriku
 Data yang digunakan dalam proyek ini adalah dataset 19560-indian-takeaway-orders. Dataset ini berisi informasi tentang pesanan makanan India dari berbagai restoran di Indonesia. Data ini terdiri dari 19.560 baris dan 10 kolom, yaitu:
 Dataset ini terdiri dari 33 ribu pesanan dari dua restoran takeaway India di London, Inggris. Setiap baris adalah satu produk dalam pesanan.
 Disini saya menggunakan dataset dari Restaurant 1, dengan 13 ribu pesanan, 75 ribu baris, dan 248 produk.<br>
-Dataset: [Takeaway Food Orders](https://www.kaggle.com/datasets/henslersoftware/19560-indian-takeaway-orders) ialah :
+Dataset: [Takeaway Food Orders](https://www.kaggle.com/datasets/henslersoftware/19560-indian-takeaway-orders)
 
 ### Variabel-variabel pada dataset
 Variabel-variabel pada dataset [Takeaway Food Orders](https://www.kaggle.com/datasets/henslersoftware/19560-indian-takeaway-orders) ialah :
@@ -96,47 +96,111 @@ Restoran dapat mempertimbangkan untuk menawarkan promosi atau diskon khusus pada
 
 ## Data Preparation
 Data preparation adalah proses awal yang penting dalam melakukan market basket analysis dengan algoritma apriori. Proses ini bertujuan untuk mempersiapkan data agar dapat digunakan oleh algoritma apriori untuk menghasilkan aturan asosiasi.
-#### 1. Normalisasi 
+#### 1. Download Dataset dari Kaggle
+```python
+from google.colab import files
+files.upload()
+```
+
+```python
+!mkdir -p ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!chmod 600 ~/.kaggle/kaggle.json
+!ls ~/.kaggle
+```
+
+```python
+!kaggle datasets download -d henslersoftware/19560-indian-takeaway-orders
+```
+
+```python
+!mkdir 19560-indian-takeaway-orders
+!unzip 19560-indian-takeaway-orders.zip -d 19560-indian-takeaway-orders
+!ls 19560-indian-takeaway-orders
+```
+
+#### 2. Import Library yang Digunakan
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from mlxtend.frequent_patterns import apriori
+from mlxtend.frequent_patterns import association_rules
+import plotly.express as px
+```
+#### 3. Data Discovery
+- Load Dataset <br>
+  Proses load dataset menggunakan library pandas untuk membaca file CSV.
+  ```python
+  data = pd.read_csv("19560-indian-takeaway-orders/restaurant-1-orders.csv")
+  ```
+- Format Data Waktu <br>
+  Fungsi ```pd.to_datetime()``` digunakan untuk mengonversi data dari format string ke format datetime.
+  ```python
+  data['Order Date'] = pd.to_datetime(data['Order Date'], format="%d/%m/%Y %H:%M")
+  ```
+- Membuat kolom baru dari kolom 'Order Date' <br>
+  Menggunakan fungsi ```dt.year```, ```dt.month```, ```dt.weekday```, dan ```dt.hour``` untuk mengambil informasi tanggal, bulan, hari dalam satu minggu, dan jam dari kolom 'Order Date'.
+  ```python
+  data["year"] = data['Order Date'].dt.year       #Kolom tahun
+  data["month"] = data['Order Date'].dt.month     #Kolom bulan
+  data["day"] = data['Order Date'].dt.weekday     #Kolom hari dalam satu minggu
+  data["hour"] = data['Order Date'].dt.hour       #Kolom Jam
+  ```
+- Membuat kolom periode_waktu <br>
+  - Mengambil kolom ```hour``` dari DataFrame data. Kolom ini berisi nilai jam dalam sehari.
+  - Menggunakan fungsi apply() untuk menerapkan fungsi lambda ke setiap nilai dalam kolom hour. Fungsi lambda ini akan mengembalikan nilai 'Pagi' jika nilai jam kurang dari 12, 'Siang' jika nilai jam antara 12 dan 16, 'Sore' jika nilai jam antara 16 dan 20, dan 'Malam' jika nilai jam lebih dari 20.
+  - Membuat kolom baru bernama periode_waktu. Kolom ini akan berisi nilai yang dikembalikan oleh fungsi lambda.
+  ```python
+  data['periode_waktu'] = data['hour'].apply(lambda x: 'Pagi' if x < 12 else 'Siang' if x < 16 else 'Sore' if x < 20 else 'Malam')
+  ```
+#### 4. Eksplorasi Data Analys
+Proses eksplorasi data dapat dilakukan dengan berbagai cara, tergantung pada jenis data dan tujuan analisis data.
+Visualisasi data adalah teknik yang digunakan untuk menyajikan data dalam bentuk visual, seperti grafik, tabel, atau diagram. Visualisasi data dapat membantu untuk memahami data dengan lebih mudah.
+Visualisasi data yang ditampilkan diantaranya:
+- Item-item paling laris
+- Item-item dengan harga tertinggi
+- Item-item dengan harga terendah
+- Jumlah transaksi yang dilakukan per bulan
+- Jumlah transaksi per jam
+- Banyaknya transaksi berdasarkan periode waktu.
+  
+#### 5. Normalisasi 
 Proses mengubah data ke format yang standar dan konsisten.
 ```python
 data["Item Name"] = data["Item Name"].apply(lambda item: item.lower())
 ```
 Proses normalisasi dengan mengubah semua huruf dalam kolom Item Name menjadi huruf kecil, ini dilakukan dengan menggunakan fungsi ```lower()``` dari Python. Fungsi ```lower()``` mengembalikan nilai string dengan semua huruf diubah menjadi huruf kecil.<br>
 
-#### 2. Pembersihan data
+#### 6. Pembersihan data
 Proses menghilangkan data yang tidak valid atau tidak diinginkan dari dataset. 
 ```python
 data["Item Name"] = data["Item Name"].apply(lambda item: item.strip())
 ```
 Proses pembersihan data ini dapat dilakukan dengan menggunakan fungsi ```strip()``` dari Python. Fungsi ```strip()``` mengembalikan nilai string dengan spasi kosong di awal dan akhir dihilangkan.<br>
-#### 3. Seleksi data
+#### 7. Seleksi data
 Proses seleksi data ini dapat dilakukan dengan menggunakan fungsi ```loc()``` dari Pandas. Fungsi ```loc()``` mengembalikan subset dari DataFrame berdasarkan indeks atau nama kolom.
 Disini seleksi data dilakukan dengan memilih kolom Order Number, Item Name, dan Quantity dari dataset.
 ```python
 item_count = data[["Order Number", "Item Name", "Quantity"]]
-item_count.head(10)
 ```
-![Gambar22](img/gambar22.png)
 
-#### 4. Pivot tabel
+#### 8. Pivot tabel
 Teknik untuk mengubah bentuk tabel dengan memutar data untuk melihat hubungan antara nilai-nilai dari berbagai kolom.
 Proses ini memungkinkan untuk melakukan analisis multidimensi dan menghasilkan representasi data yang lebih ringkas dan mudah dipahami.
 ```python
 item_count_pivot = item_count.pivot_table(index='Order Number', columns='Item Name', values='Quantity', aggfunc=sum).fillna(0)
-item_count_pivot.head()
 ```
-![Gambar33](img/gambar33.png)
 
-#### 5. Konversi tipe data
+#### 9. Konversi tipe data
 Proses mengubah tipe data dari suatu variabel. 
 Disini konversi tipe data dilakukan dengan mengubah tipe data kolom Quantity dari pivot tabel ```item_count_pivot``` dari tipe data ```float64``` menjadi tipe data ```int32```.
 ```python
 item_count_pivot = item_count_pivot.astype("int32")
-item_count_pivot.head()
 ```
-![Gambar44](img/gambar44.png)
 
-#### 6. Encoding
+#### 10. Encoding
 Proses mengubah nilai-nilai dalam dataset menjadi format yang lebih mudah diproses oleh algoritma machine learning tertentu.
 Disini encoding dilakukan dengan mengubah semua nilai quantitas (jumlah item) menjadi nilai biner ```0``` atau ```1``` untuk menunjukkan apakah suatu item dipesan atau tidak.
 ```python
@@ -147,11 +211,9 @@ def encode_units(x):
         return 1
 
 item_count_pivot = item_count_pivot.applymap(encode_units)
-item_count_pivot.head()
 ```
-![Gambar55](img/gambar55.png)
 
-#### 7. Pemeriksaan dimensi data<br>
+#### 11. Pemeriksaan dimensi data<br>
 Proses untuk memeriksa ukuran dan bentuk dari suatu dataset.
 Disini pemeriksaan dimensi data dilakukan dengan menggunakan metode ```shape()``` dari Pandas.
 
@@ -160,9 +222,9 @@ print("Ukuran Dataset : ", item_count_pivot.shape)
 print("Jumlah Transaksi :", item_count_pivot.shape[0])     
 print("Jumlah Item : ", item_count_pivot.shape[1]) 
 ```
->Ukuran Dataset :  (13397, 248)
->Jumlah Transaksi : 13397
->Jumlah Item :  248
+>Ukuran Dataset :  (13397, 248)<br>
+>Jumlah Transaksi : 13397<br>
+>Jumlah Item :  248<br>
 <br>
 
 ## Modeling Association Rules - Algoritma Apriori
@@ -178,7 +240,7 @@ frq_items.sort_values("support", ascending=False).head(15)
 - Menerapkan Algoritma Apriori
 Memanggil fungsi ```apriori()``` dari library apriori untuk menerapkan algoritma Apriori. Algoritma ini dirancang untuk menemukan aturan asosiasi yang kuat dalam dataset transaksional.
 - Menampilkan item-item yang sering muncul
-```frq_items.sort_values("support", ascending=False).head(15)``` menampilkan 15 item atau kumpulan item yang paling sering muncul, diurutkan berdasarkan nilai support dari yang tertinggi ke terendah.
+```frq_items.sort_values("support", ascending=False).head(15)``` menampilkan 15 item atau kumpulan item yang paling sering muncul, diurutkan berdasarkan nilai support dari yang tertinggi ke terendah.<br>
 ![Gambar66](img/gambar66.png)
 
 ##### Proses penyaringan dan penyusunan aturan asosiasi berdasarkan metrik lift dan nilai confidence minimum
